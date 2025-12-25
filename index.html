@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MONARCH — Премиальная мужская одежда</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">MONARCH</div>
+    <div class="nav-links">
+      <a href="#catalog">Каталог</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+    <div class="cart-icon" id="cartIcon"> 🛒  <span class="cart-count" id="cartCount">0</span></div>
+  </nav>
+
+  <section class="hero" data-aos="fade-up">
+    <h1>Премиальная мужская одежда</h1>
+    <p>Вневременной стиль. Безупречное качество. Только для настоящих.</p>
+  </section>
+
+  <section class="section" id="catalog">
+    <h2 class="section-title">Новинки коллекции</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">Все</button>
+      <button class="filter-btn" data-category="outerwear">Верхняя одежда</button>
+      <button class="filter-btn" data-category="tops">Рубашки и свитера</button>
+      <button class="filter-btn" data-category="bottoms">Брюки</button>
+      <button class="filter-btn" data-category="shoes">Обувь</button>
+      <button class="filter-btn" data-category="accessories">Аксессуары</button>
+    </div>
+    <div class="catalog" id="catalogGrid"></div>
+  </section>
+
+  <section class="section" id="about">
+    <h2 class="section-title">О бренде MONARCH</h2>
+    <div style="max-width:900px;margin:0 auto;text-align:center;line-height:1.8;font-size:1.1rem;">
+      <p style="color:var(--gold);margin-bottom:1.5rem;font-size:1.3rem;">MONARCH — это не просто одежда. Это философия настоящего мужского стиля.</p>
+      <p style="margin-bottom:1.5rem;">Мы создаём вещи, которые подчёркивают статус, уверенность и вкус. Каждая деталь — от итальянского кроя до премиальных тканей — продумана до мелочей.</p>
+      <p style="margin-bottom:1.5rem;">Наши пальто из чистого кашемира, костюмы из шерсти Super 120’s, рубашки из египетского хлопка и аксессуары ручной работы — это выбор тех, кто ценит вечное, а не модное.</p>
+      <p style="color:var(--gold);font-weight:600;">MONARCH — для тех, кто не следует за толпой. Для тех, кто ведёт.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contacts">
+    <h2 class="section-title">Контакты</h2>
+    <div style="text-align:center;color:var(--muted);">
+      <p>г. Ош, Кыргызстан</p>
+      <p>Плюс-код: <strong>GRJ5+Q6 Ош</strong> (центр города)</p>
+      <p>+996 555 123 456</p>
+      <p>info@monarch-fashion.kg</p>
+      <div style="margin:1.5rem 0;">
+        <a href="https://t.me/@theeenki" target="_blank">Telegram</a> • 
+        <a href="https://instagram.com/monarch_fashion" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="location">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1501.0364860906185!2d72.789659201891!3d40.52925675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDMxJzQ1LjMiTiA3MsKwNDcnMjEuNiJF!5e0!3m2!1sru!2skg!4v1733901234567!5m2!1sru!2skg"
+      width="100%" height="420" style="border:0;border-radius:14px;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>© 2025 MONARCH. Все права защищены.</footer>
+
+  <!-- Модалки -->
+  <div class="modal" id="cartModal"><div class="modal-content"><span class="close">×</span><h3>Корзина</h3><div id="cartItems">Корзина пуста</div><div style="margin:1.5rem 0;font-size:1.3rem;text-align:right;" id="cartTotal">Итого: €0</div><button class="btn-buy" id="checkoutBtn">Оформить заказ</button></div></div>
+
+  <div class="modal" id="orderModal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <h3>Оформление заказа</h3>
+      <div style="text-align:center;margin:1.5rem 0;color:var(--muted);">
+        <p style="font-size:1.5rem;color:var(--gold);">Итого к оплате: <strong id="orderTotal">€0</strong></p>
+        <div class="payment-section">
+          <div class="payment-title">Способ оплаты</div>
+          <div class="qr-container">
+            <p style="margin-bottom:1rem;color:var(--gold);"><strong>QR-код (Elcart / MBANK / О!Деньги)</strong></p>
+            <img src="03.png" alt="QR">
+            <p style="margin-top:1rem;font-size:0.95rem;color:#ccc;">Сканируйте в любом приложении</p>
+          </div>
+          <div class="card-info">
+            <p style="color:var(--gold);"><strong>Перевод на карту</strong></p>
+            <div class="card-number">•••• •••• •••• 1234</div>
+            <p style="font-size:0.9rem;margin-top:0.8rem;">В комментарии укажите телефон</p>
+          </div>
+        </div>
+      </div>
+      <form id="orderForm" class="order-form" onsubmit="event.preventDefault();alert('Заказ оформлен!');cart=[];updateCart();orderModal.style.display='none';this.reset();">
+        <div class="form-group"><label class="form-label">ФИО</label><input type="text" class="form-input" placeholder="Иванов Иван" required></div>
+        <div class="form-group"><label class="form-label">Телефон</label><input type="tel" class="form-input" placeholder="+996 ___ __ __" required></div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="example@mail.com" required></div>
+        <div class="form-group"><label class="form-label">Город</label><input type="text" class="form-input" placeholder="Ош" required></div>
+        <div class="form-group"><label class="form-label">Адрес доставки</label><input type="text" class="form-input" placeholder="ул. Ленина 123" required></div>
+        <button type="submit" class="submit-btn">Я оплатил — подтвердить заказ</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
